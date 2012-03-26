@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
+    <script language="javascript" type="text/javascript" src="jquery.js"></script>
+
+    <script language="javascript" type="text/javascript" src="jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="../jquery.graphTable-0.3.js"></script>
+    <style>
+      body {
+        font-family:Arial;
+      }
+
+      div.flot-graph {
+        margin:20px 0;
+      }
+
+      p {
+        padding:4px 2px;
+        background-color:#eee;
+        border:1px solid #ccc;
+        font-family:Courier;
+      }
+
+      table {
+        text-align:center;
+      }
+
+      table caption {
+        text-align:left;
+        font-weight:bold;
+        margin:20px 0 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" cellpadding="2" id="table1" width="500">
+      <thead>
+        <caption>Table 1: Graph by columns</caption>
+        <tr>
+          <th></th>
+          <th>col1</th>
+          <th>col2</th>
+          <th>col3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1</th>
+          <td>10</td>
+          <td>20</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <th>2</th>
+          <td>20</td>
+          <td>40</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <th>3</th>
+          <td>40</td>
+          <td>80</td>
+          <td>120</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>$('#table1').graphTable({series: 'columns'});</p>
+
+    <input type="submit" onclick="$('#table1').graphTable({series: 'columns'}); $(this).remove();" value="go" />
+
+    <table border="1" cellpadding="2" id="table2" width="500">
+      <thead>
+        <caption>Table 2: Graph by rows</caption>
+        <tr>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>row1</th>
+          <td>10</td>
+          <td>20</td>
+          <td>30</td>
+        </tr>
+        <tr>
+          <th>row2</th>
+          <td>20</td>
+          <td>40</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <th>row3</th>
+          <td>40</td>
+          <td>80</td>
+          <td>120</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>$('#table2').graphTable({series: 'rows'});</p>
+    <input type="submit" onclick="$('#table2').graphTable({series: 'rows'}); $(this).remove();" value="go" />
+
+    <table border="1" cellpadding="2" id="table3" width="500">
+      <thead>
+        <caption>Table 3: Graph by rows, replace currency symbol</caption>
+        <tr>
+          <th></th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>row1</th>
+          <td>$10</td>
+          <td>$20</td>
+          <td>$30</td>
+        </tr>
+        <tr>
+          <th>row2</th>
+          <td>$20</td>
+          <td>$40</td>
+          <td>$60</td>
+        </tr>
+        <tr>
+          <th>row3</th>
+          <td>$40</td>
+          <td>$80</td>
+          <td>$120</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>$('#table3').graphTable({series: 'rows', dataTransform: function(s) { return(s.replace('$','')); } });</p>
+    <input type="submit" onclick="$('#table3').graphTable({series: 'rows', dataTransform: function(s) { return(s.replace('$','')); } }); $(this).remove();" value="go" />
+
+  </body>
+</html>
+
