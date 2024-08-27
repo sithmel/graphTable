@@ -1,3 +1,5 @@
+This project is no longer maintained. Feel free to fork it if you like it!
+
 Authors
 =======
 Rebecca Murphey (original author) and Maurizio Lupo (refactoring and last enhancements)
